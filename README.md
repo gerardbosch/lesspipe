@@ -222,7 +222,7 @@ Several Linux distributions do now set **LESSOPEN** by default and if the conten
 - ods			requires `xlscat` or `libreoffice`
 - MS Word (docx)	requires `pandoc` or `docx2txt` or `libreoffice`
 - Powerpoint (pptx)	requires `pptx2md` or `libreoffice`
-- Excel (xlsx)		requires `in2csv` or `xlscat` or `excel2csv` or `libreoffice`
+- Excel (xlsx)		requires `xlsx2csv` (>= 0.8.3) or `in2csv` or `xlscat` or `excel2csv` or `libreoffice`
 - csv			requires `csvtable` or `csvlook` or `column` or `pandoc`
 - rtf			requires `unrtf` or `libreoffice`
 - epub			requires `pandoc`
@@ -455,6 +455,7 @@ STDOUT and the commands executed to STDERR.
 - unrtf                https://www.gnu.org/software/unrtf/ (2018)
 - wvText               https://github.com/AbiWord/wv/ (2014)
 - xlscat               https://metacpan.org/pod/Spreadsheet::Read (2024)
+- xlsx2csv (>=0.8.3)   https://github.com/dilshod/xlsx2csv (2024) 
 - sxw2txt              https://vinc17.net/software/sxw2txt (2010)
 - dtc                  https://git.kernel.org/cgit/utils/dtc/dtc.git (2024)
 - xmq                  https://github.com/libxmq/xmq/releases/latest (2024)

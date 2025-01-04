@@ -1,6 +1,8 @@
 ****************************************************************************
 # ChangeLog for lesspipe.sh						   #
 ****************************************************************************
+- added xlsx2csv to first convert xlsx to csv and then display the csv content
+- added optional minimal version check for external commands
 Version 2.17 Dec 22 2024
 - evaluation of current locale changed (compatible with old bash versions)
 - correct typo in xlsx files handling
@@ -102,7 +104,7 @@ Version 2.00-beta Dec 22 2021
 - added better bsdtar handling from the contributed bsdtar patch (Jim Pryor)
 - added -layout option to pdftotext (Sergio Callegari)
 - changed code for extraction of less calling parameters
-- dont engage lesspipe in pipes (LESSPIPE=|-...), if called from man and perldoc
+- don't engage lesspipe in pipes (LESSPIPE=|-...), if called from man and perldoc
 - iconv handles most conversions from non foreign encodings
 - tarcolor enhanced and renamed to archive_color, archive listings colorizations
 Version 2.00-alpha Dec 8 2021

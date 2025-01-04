@@ -4,6 +4,7 @@ lesspipe_version=2.17
 # Author: Wolfgang Friebel (wp.friebel AT gmail.com)
 
 has_cmd () {
+	[[ -n "$2" && "$2" > $($1 --version 2>/dev/null) ]] && return 1
 	command -v "$1" > /dev/null
 }
 
@@ -297,7 +298,9 @@ get_unpack_cmd () {
 			has_cmd zstd && cmd=(zstd -cdqM1073741824 "$2") ;;
 		lz4)
 			has_cmd lz4 && cmd=(lz4 -cdq "$2") ;;
+		# xls(x) output looks better if transformed to csv and then displayed
 		xlsx)
+			{ has_cmd xlsx2csv 0.8.3 && cmd=(xlsx2csv "$2"); } ||
 			{ has_cmd in2csv && cmd=(in2csv -f xlsx "$2"); } ||
 			{ has_cmd excel2csv && cmd=(istemp excel2csv "$2"); } ;;
 		ms-excel)
