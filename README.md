@@ -111,7 +111,6 @@ the author by email.
  in the following way:
 ```
         LESSOPEN="|lesspipe.sh %s"; export LESSOPEN  # (sh like shells)
-        setenv LESSOPEN "|lesspipe.sh %s"            # (csh, tcsh)
 ```
  If `lesspipe.sh` is not in the UNIX search path or if the wrong `lesspipe.sh` is
  found in the search path, then the full path to `lesspipe.sh` should be given

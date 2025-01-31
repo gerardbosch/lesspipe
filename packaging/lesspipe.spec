@@ -50,11 +50,6 @@ mkdir -p $RPM_BUILD_ROOT/etc/profile.d
 cat << EOF > $RPM_BUILD_ROOT/etc/profile.d/zzless.sh
 [ -x %{prefix}/bin/lesspipe.sh ] && export LESSOPEN="|%{prefix}/bin/lesspipe.sh %s"
 EOF
-cat << EOF > $RPM_BUILD_ROOT/etc/profile.d/zzless.csh
-if ( -x %{prefix}/bin/lesspipe.sh ) then
-  setenv LESSOPEN "|%{prefix}/bin/lesspipe.sh %s"
-endif
-EOF
 
 %clean
 

@@ -1,6 +1,7 @@
 ****************************************************************************
 # ChangeLog for lesspipe.sh						   #
 ****************************************************************************
+- document install in user space, do no longer mention (t)csh in documentation
 - added xlsx2csv to first convert xlsx to csv and then display the csv content
 - added optional minimal version check for external commands
 Version 2.17 Dec 22 2024
