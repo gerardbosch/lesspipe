@@ -84,6 +84,8 @@ cd $RPM_BUILD_DIR
 %docdir %{prefix}/share/man/man1
 
 %changelog
+* Sun Feb 16 2025 2.18-1 - wp.friebel@gmail.com
+- documentation enhanced, better xlsx support
 * Sun Dec 22 2024 2.17-1 - wp.friebel@gmail.com
 - Fixes for xslx and MacOS
 * Sun Nov 10 2024 2.16-1 - wp.friebel@gmail.com

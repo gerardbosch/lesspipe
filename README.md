@@ -1,6 +1,6 @@
 # lesspipe.sh, a preprocessor for less
 
-Version: 2.17
+Version: 2.18
 Author : Wolfgang Friebel [wp.friebel@gmail.com](mailto://wp.friebel@gmail.com)
 License: GPL
 
@@ -419,12 +419,14 @@ STDOUT and the commands executed to STDERR.
  In English
  - https://ref.web.cern.ch/CERN/CNL/2002/001/unix-less/
  - https://www.oreilly.com/library/view/bash-cookbook/0596526784/ch08s15.html
+ - https://github.com/wofr06/lesspipe/wiki/article_en
 
  In German:
  - german.txt (distributed with lesspipe, not updated)
  - https://www.linux-magazin.de/ausgaben/2001/01/bessere-sicht/
  - https://www.linux-community.de/ausgaben/linuxuser/2002/04/lesspipe/
  - https://www.linux-magazin.de/ausgaben/2022/07/lesspipe-2-0/
+ - https://github.com/wofr06/lesspipe/wiki/article_de
 
 ## 12. External links
 
