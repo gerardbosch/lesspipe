@@ -1,6 +1,6 @@
 # lesspipe.sh, a preprocessor for less
 
-Version: 2.14
+Version: 2.18
 Author : Wolfgang Friebel [wp.friebel@gmail.com](mailto://wp.friebel@gmail.com)
 License: GPL
 
@@ -111,7 +111,6 @@ the author by email.
  in the following way:
 ```
         LESSOPEN="|lesspipe.sh %s"; export LESSOPEN  # (sh like shells)
-        setenv LESSOPEN "|lesspipe.sh %s"            # (csh, tcsh)
 ```
  If `lesspipe.sh` is not in the UNIX search path or if the wrong `lesspipe.sh` is
  found in the search path, then the full path to `lesspipe.sh` should be given
@@ -127,6 +126,8 @@ the author by email.
         eval "$(lesspipe.sh)"             # (bash) or
         lesspipe.sh | source /dev/stdin   # (zsh)
 ```
+Several Linux distributions do now set **LESSOPEN** by default and if the contents of the variable is not referring to this lesspipe.sh version, it has to be redefined to get the functionality described here.
+
  As `lesspipe.sh` is accepting only a single argument, a hierarchical list of file
  names has to be separated by a non-blank character. A colon is rarely found
  in file names, therefore it has been chosen as the separator character. If a
@@ -210,7 +211,7 @@ the author by email.
 
 ### 4.2 List of preprocessed file types
 - directory		displayed using `ls -lA`
-- nroff(man)		requires `groff` or `mandoc`
+- nroff(man)		requires `mandoc` or `man` or `groff`
 - shared library	requires `nm`
 - MS Word (doc)		requires `wvText` or `catdoc` or `libreoffice`
 - Powerpoint (ppt)	requires `catppt`
@@ -220,7 +221,7 @@ the author by email.
 - ods			requires `xlscat` or `libreoffice`
 - MS Word (docx)	requires `pandoc` or `docx2txt` or `libreoffice`
 - Powerpoint (pptx)	requires `pptx2md` or `libreoffice`
-- Excel (xlsx)		requires `in2csv` or `xlscat` or `excel2csv` or `libreoffice`
+- Excel (xlsx)		requires `xlsx2csv` (>= 0.8.3) or `in2csv` or `xlscat` or `excel2csv` or `libreoffice`
 - csv			requires `csvtable` or `csvlook` or `column` or `pandoc`
 - rtf			requires `unrtf` or `libreoffice`
 - epub			requires `pandoc`
@@ -418,19 +419,21 @@ STDOUT and the commands executed to STDERR.
  In English
  - https://ref.web.cern.ch/CERN/CNL/2002/001/unix-less/
  - https://www.oreilly.com/library/view/bash-cookbook/0596526784/ch08s15.html
+ - https://github.com/wofr06/lesspipe/wiki/article_en
 
  In German:
  - german.txt (distributed with lesspipe, not updated)
  - https://www.linux-magazin.de/ausgaben/2001/01/bessere-sicht/
  - https://www.linux-community.de/ausgaben/linuxuser/2002/04/lesspipe/
  - https://www.linux-magazin.de/ausgaben/2022/07/lesspipe-2-0/
+ - https://github.com/wofr06/lesspipe/wiki/article_de
 
 ## 12. External links
 
-(last checked: Jan 29 2024):
+(last checked: Oct 20 2024):
 
 ### 12.1 URLs to some utilities (with last known release)
-- 7zz                  https://sourceforge.net/projects/sevenzip/ (2023)
+- 7zz                  https://sourceforge.net/projects/sevenzip/ (2024)
 - 7zr (outdated!)      https://sourceforge.net/projects/p7zip/ (2016)
 - cabextract           https://www.cabextract.org.uk/ (2023)
 - catdoc,catppt,xls2csv https://www.wagner.pp.ru/~vitus/software/catdoc/ (2016)
@@ -440,21 +443,22 @@ STDOUT and the commands executed to STDERR.
 - docx2txt             https://docx2txt.sourceforge.net/ (2014)
 - dvi2tty              https://www.ctan.org/tex-archive/dviware/dvi2tty/ (2016)
 - excel2csv            https://github.com/informationsea/excel2csv (2018)
-- html2text            https://github.com/grobian/html2text (2023)
+- html2text            https://github.com/grobian/html2text (2024)
 - id3v2                https://id3v2.sourceforge.net/ (2010)
 - lzip                 https://www.nongnu.org/lzip/lzip.html (2024)
-- matdump              https://sourceforge.net/projects/matio/ (2023)
-- mediainfo            https://mediaarea.net/MediaInfo/ (2023)
+- matdump              https://sourceforge.net/projects/matio/ (2024)
+- mediainfo            https://mediaarea.net/MediaInfo/ (2024)
 - odt2txt              https://github.com/dstosberg/odt2txt (2017)
-- pandoc               https://pandoc.org/ (2023)
-- pptx2md              https://github.com/ssine/pptx2md (2023)
+- pandoc               https://pandoc.org/ (2024)
+- pptx2md              https://github.com/ssine/pptx2md (2024)
 - tarcolor             https://github.com/msabramo/tarcolor (2014)
 - archive_color        modified version of tarcolor (contained in this package)
 - unrtf                https://www.gnu.org/software/unrtf/ (2018)
 - wvText               https://github.com/AbiWord/wv/ (2014)
 - xlscat               https://metacpan.org/pod/Spreadsheet::Read (2024)
+- xlsx2csv (>=0.8.3)   https://github.com/dilshod/xlsx2csv (2024) 
 - sxw2txt              https://vinc17.net/software/sxw2txt (2010)
-- dtc                  https://git.kernel.org/cgit/utils/dtc/dtc.git (2023)
+- dtc                  https://git.kernel.org/cgit/utils/dtc/dtc.git (2024)
 - xmq                  https://github.com/libxmq/xmq/releases/latest (2024)
 - nvimpager            https://github.com/lucc/nvimpager (2024)
 

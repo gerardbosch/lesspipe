@@ -1,5 +1,5 @@
 %define packagename lesspipe
-%define packageversion 2.14
+%define packageversion 2.17
 %define packagerelease 1
 
 Name:          %{packagename}
@@ -50,11 +50,6 @@ mkdir -p $RPM_BUILD_ROOT/etc/profile.d
 cat << EOF > $RPM_BUILD_ROOT/etc/profile.d/zzless.sh
 [ -x %{prefix}/bin/lesspipe.sh ] && export LESSOPEN="|%{prefix}/bin/lesspipe.sh %s"
 EOF
-cat << EOF > $RPM_BUILD_ROOT/etc/profile.d/zzless.csh
-if ( -x %{prefix}/bin/lesspipe.sh ) then
-  setenv LESSOPEN "|%{prefix}/bin/lesspipe.sh %s"
-endif
-EOF
 
 %clean
 
@@ -89,6 +84,14 @@ cd $RPM_BUILD_DIR
 %docdir %{prefix}/share/man/man1
 
 %changelog
+* Sun Feb 16 2025 2.18-1 - wp.friebel@gmail.com
+- documentation enhanced, better xlsx support
+* Sun Dec 22 2024 2.17-1 - wp.friebel@gmail.com
+- Fixes for xslx and MacOS
+* Sun Nov 10 2024 2.16-1 - wp.friebel@gmail.com
+- file name checks for ar
+* Thu Oct 03 2024 2.15-1 - wp.friebel@gmail.com
+- display all certificates in pem files
 * Fri Aug 16 2024 2.14-1 - wp.friebel@gmail.com
 - prefer nvimpager for coloring if installed
 * Fri May 10 2024 2.13-1 - wp.friebel@gmail.com

@@ -1,6 +1,24 @@
 ****************************************************************************
 # ChangeLog for lesspipe.sh						   #
 ****************************************************************************
+Version 2.18 Feb 16 2025
+- short article 25 years recursive lesspipe in the lesspipe.sh wiki (en and de)
+- document install in user space, do no longer mention (t)csh in documentation
+- added xlsx2csv to first convert xlsx to csv and then display the csv content
+- added optional minimal version check for external commands
+Version 2.17 Dec 22 2024
+- evaluation of current locale changed (compatible with old bash versions)
+- correct typo in xlsx files handling
+Version 2.16 Nov 10 2024
+- security fix: check file name if used with ar
+- add --ansi to mdcat (fixes #48)
+- improved recognition of appimage files
+Version 2.15 Oct 03 2024
+- improved parsing of bat/batcat options in LESSCOLORIZE 
+- display all certificates in pem files, not only the 1st one
+- do not exit if called from other programs (man, git, perldoc)
+- improve option processing in bat
+- change (again) order of programs to process man pages
 - force unicode/utf8 for html2text
 Version 2.14 Aug 16 2024
 - allow for colorizing dotfiles
@@ -89,7 +107,7 @@ Version 2.00-beta Dec 22 2021
 - added better bsdtar handling from the contributed bsdtar patch (Jim Pryor)
 - added -layout option to pdftotext (Sergio Callegari)
 - changed code for extraction of less calling parameters
-- dont engage lesspipe in pipes (LESSPIPE=|-...), if called from man and perldoc
+- don't engage lesspipe in pipes (LESSPIPE=|-...), if called from man and perldoc
 - iconv handles most conversions from non foreign encodings
 - tarcolor enhanced and renamed to archive_color, archive listings colorizations
 Version 2.00-alpha Dec 8 2021

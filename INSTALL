@@ -1,5 +1,5 @@
-INSTALL
-=======
+INSTALL (requires root access)
+==============================
 Execute the following commands (for a more detailed description see below):
 
   ./configure
@@ -20,12 +20,35 @@ or if you prefer make:
   make test
   make install
 
+or INSTALL locally for the logged in user
+=========================================
+# if it contains a directory writable by you (e.g. ~/bin)
+  [[ -d ~/bin ]] || mkdir ~/bin
+  cp lesspipe.sh lesscomplete ~/bin
+  # optional for colorizing and old openoffice writer formats
+  cp code2color archive_color vimcolor sxw2txt lesscomplete ~/bin
+
+# check your PATH variable, if it does not contain ~/bin then add it to PATH
+  echo $PATH
+  PATH=$PATH:~/bin # (put this statement in an int script .bashrc/.zshrc)
+
+# when using zsh then do similar steps for fpath and _less
+  [[ -d ~/.fpath ]] || mkdir ~/.fpath
+  cp _less ~/.fpath
+  echo $fpath
+  fpath=$fpath:~/.fpath # (put this statement in an int script .bashrc/.zshrc)
+
+# for bash the file less_completion can be put into ~/.bash_completion
+  [[ -d ~/.bash_completion ]] || mkdir ~/.bash_completion
+  cp less_completion ~/.bash_completion
+
 Then do set the environment variable LESSOPEN:
 
   LESSOPEN="|/usr/local/bin/lesspipe.sh %s"; export LESSOPEN  #(sh like shells)
-  setenv LESSOPEN "|/usr/local/bin/lesspipe.sh %s"            #(csh, tcsh)
 
   DO NOT OMIT THE VERTICAL BAR AS FIRST CHARACTER, IT IS ESSENTIAL !!!
+
+Adapt the location of lesspipe.sh if you used another location.
 
 Detailed description
 ====================
@@ -99,4 +122,3 @@ The use of the fully qualified path is recommended to avoid problems with other
 scripts of the same name or with a changed search PATH:
 
   LESSOPEN="|/usr/local/bin/lesspipe.sh %s"; export LESSOPEN  #(sh like shells)
-  setenv LESSOPEN "|/usr/local/bin/lesspipe.sh %s"	      #(csh, tcsh)
